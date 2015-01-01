@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">
+      <%= @post.title %>
+    </h1>
+    <p class="post-meta"><%= @post.created_at %></p>
+  </header>
+
+  <article class="post-content">
+    <%= @post.content %>
+  </article>
+</div>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
