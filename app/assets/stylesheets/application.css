@@ -21,5 +21,9 @@
 }
 
 #post_content {
-    height: 50em;
+    height: 25em;
+}
+
+.submit-button {
+    width: 7em;
 }
