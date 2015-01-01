@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+#post_title, #post_content {
+    width: 100%;
+    font-size: 13pt;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#post_content {
+    height: 50em;
+}
