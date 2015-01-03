@@ -27,3 +27,8 @@
 .submit-button {
     width: 7em;
 }
+
+.user_navigation {
+    width: 100%;
+    text-align: right;
+}
