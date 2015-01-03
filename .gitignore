@@ -51,3 +51,6 @@ config/secrets.yml
 bower.json
 
 nginxconf
+
+# public assets folder
+/public/assets/
