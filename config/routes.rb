@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  get '/login' => 'sessions#new'
+
   resources :posts
   resources :users
   resources :sessions

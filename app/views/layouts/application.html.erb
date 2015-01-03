@@ -32,8 +32,6 @@
 <div class="user_navigation">
   <% if current_user %>
       Logged in as <%= current_user.email %> <%= link_to 'Logout', session_path('current'), method: :delete %>
-  <% else %>
-      <%= link_to 'Sign up', new_user_path %> or <%= link_to 'Login', new_session_path %>
   <% end %>
 </div>
 
