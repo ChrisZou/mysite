@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :users
   resources :sessions
 

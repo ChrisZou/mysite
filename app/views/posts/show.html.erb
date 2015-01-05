@@ -19,4 +19,33 @@
 <% if is_admin %>|
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%	 end %>
+<% end %>
+
+<div class="comments">
+<% @comments.each do |comment| %>
+      <div class="comment-item">
+    <div><span class="comment-username"><%= "#{comment.username}  " if comment.username %></span><span class="comment-time"><%= comment.created_at %></span></div>
+    <div><%= comment.content %></div>
+      </div>
+<% end %>
+</div>
+
+<a name="new_comment"></a>
+<%= form_for([@post, @comment], html: {class: 'pure-form'}) do |f| %>
+    <% if flash[:comment_error] %>
+        <div id="error_explanation">
+          <%= flash[:comment_error] %>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: '欢迎留言！' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :email, placeholder: '您的邮箱，可选，不公开' %>
+      <div class="actions">
+        <%= f.submit '留言', class: 'pure-button pure-button-primary' %>
+        </div>
+    </div>
+
+<% end %>
+
