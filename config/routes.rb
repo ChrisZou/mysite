@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'info/about'
+  get '/about' => 'info#about', as: :about
+
   # get 'sessions/new'
 
   root 'posts#index'
