@@ -21,7 +21,11 @@
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
+
+<div class="comments-divider"></div>
 <div class="comments">
+
+
 <% @comments.each do |comment| %>
       <div class="comment-item">
     <div><span class="comment-username"><%= "#{comment.username}  " if comment.username %></span><span class="comment-time"><%= comment.created_at %></span></div>
