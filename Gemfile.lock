@@ -77,6 +77,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.2.2)
     ref (1.0.5)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -125,6 +126,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.8)
+  redcarpet
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

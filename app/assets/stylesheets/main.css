@@ -375,7 +375,7 @@ pre > code {
 }
 
 .post-content {
-    white-space: pre-wrap;
+    /*white-space: pre-wrap;*/
 }
 
 .post-content h2 {
