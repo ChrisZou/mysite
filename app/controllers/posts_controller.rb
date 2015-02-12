@@ -10,10 +10,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, fenced_code_blocks: true)
-    @content = markdown.render(@post.content).html_safe
-    puts @content
-
     @comments = @post.comments
     @comment = Comment.new
   end
