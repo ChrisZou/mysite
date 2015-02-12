@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/kalkov/rails4_client_side_validations.git
+  revision: 328e91d6cfc29b0b122a3240dffa0af5e37685a7
+  specs:
+    rails4_client_side_validations (0.0.4)
+      rails (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -126,6 +133,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.8)
+  rails4_client_side_validations!
   redcarpet
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
