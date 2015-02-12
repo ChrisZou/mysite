@@ -12,7 +12,7 @@
   </header>
 
   <div class="post-content">
-    <%= @content %>
+    <%= markdown_to_html(@post.content) %>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
         <div>
           <span class="comment-username"><%= "#{comment.username}  " if comment.username %></span><span class="comment-time"><%= comment.created_at %></span>
         </div>
-        <div><%= comment.content %></div>
+        <div><%= markdown_to_html(comment.content) %></div>
       </div>
   <% end %>
 </div>
