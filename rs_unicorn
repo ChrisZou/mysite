@@ -1,5 +1,9 @@
-#!/bin/sh
-unicorn_pid=`cat tmp/pids/unicorn.pid`
-echo "Restarting Unicorn ($unicorn_pid)"
-kill -9 $unicorn_pid
-unicorn_rails -c config/unicorn.rb -D -E production
+#!/usr/bin/env ruby
+
+diff = `git diff HEAD HEAD~1 --stat`
+system('bundle install') if diff.include?('Gemfile')
+system('./proassets') if (diff.include?('.css') || diff.include?('.js'))
+unicorn_pid = File.read('tmp/pids/unicorn.pid').strip
+puts "Restarting Unicorn (#{unicorn_pid})"
+system("kill -9 #{unicorn_pid}")
+system('unicorn_rails -c config/unicorn.rb -D -E production')
