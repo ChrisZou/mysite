@@ -34,6 +34,8 @@ gem 'unicorn'
 
 gem 'redcarpet'
 
+gem 'rails4_client_side_validations', git: 'https://github.com/kalkov/rails4_client_side_validations.git'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
