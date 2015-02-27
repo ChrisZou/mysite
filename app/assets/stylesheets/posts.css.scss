@@ -13,3 +13,14 @@
   margin-bottom: 2em;
   margin-top: 1em;
 }
+
+.post-abstract {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  line-height: 1.2em;        /* fallback */
+  max-height: 6em;       /* fallback */
+}

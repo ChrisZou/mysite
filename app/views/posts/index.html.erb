@@ -2,16 +2,19 @@
 
 <div class="home">
 <h1 class="page-heading">文章列表</h1>
-  <ul class="post-list">
+  <div class="post-list">
     <% @posts.each do |post| %>
-        <li>
+        <div class="post-list-item">
           <span class="post-meta"><%= post.created_at %></span>
           <h2>
             <%= link_to post.title, post, class: 'post-link' %>
           </h2>
-        </li>
+          <div class="post-abstract">
+            <%= markdown_to_text(post.content) %>
+          </div>
+        </div>
     <% end %>
-  </ul>
+  </div>
 <br>
 
   <% if is_admin  %>
