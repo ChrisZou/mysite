@@ -1,3 +1,4 @@
+require 'redcarpet'
 require 'redcarpet/render_strip'
 
 module ApplicationHelper
@@ -10,7 +11,7 @@ module ApplicationHelper
   end
 
   def markdown_to_html(markdown_str)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, fenced_code_blocks: true)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, hard_wrap: true, autolink: true, fenced_code_blocks: true)
     markdown.render(markdown_str).html_safe
   end
 
