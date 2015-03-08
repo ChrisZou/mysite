@@ -2,17 +2,16 @@
 <html>
 <head>
   <title><%= yield(:title) || 'ChrisZou' %></title>
-
-  <div id='wx_pic' style='margin:0 auto;display:none;'>
-    <img src='http://chriszou.com/avatar.jpg' />
-  </div>
-
-  <link rel="shortcut icon" href="http://chriszou.com/images/favicon.ico">
-  
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application','rails.validations', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <%= favicon_link_tag '/images/favicon.ico' %>
+  <div id='wx_pic' style='margin:0 auto;display:none;'>
+    <img src='http://chriszou.com/avatar.jpg' />
+  </div>
+
   <!--Baidu statistics code-->
   <script>
     var _hmt = _hmt || [];
