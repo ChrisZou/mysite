@@ -3,7 +3,9 @@
 diff = `git diff HEAD HEAD~1 --stat`
 system('bundle install') if diff.include?('Gemfile')
 system('./proassets') if (diff.include?('.css') || diff.include?('.js'))
-unicorn_pid = File.read('tmp/pids/unicorn.pid').strip
-puts "Restarting Unicorn (#{unicorn_pid})"
-system("kill -9 #{unicorn_pid}")
+if File.exists?('tmp/pids/unicorn.pid')
+    unicorn_pid = File.read('tmp/pids/unicorn.pid').strip if File.exists?('tmp/pids/unicorn.pid')
+    puts "Restarting Unicorn (#{unicorn_pid})"
+    system("kill -9 #{unicorn_pid}")
+end
 system('unicorn_rails -c config/unicorn.rb -D -E production')
